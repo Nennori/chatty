@@ -1,21 +1,46 @@
 {
   "name": "chatty",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "@babel/eslint-parser": "^7.5.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-jest-enzyme": "^7.1.2",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.0.6",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.2",
+    "jest-enzyme": "^7.1.2",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yarn": "^1.22.15"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write src/**/*.js",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {    
+    "*.(js|jsx)": ["npm run lint:write", "git add"]  
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +59,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "main": "index.js",
+  "author": "Anastasya Zhuk",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "lint-staged": "^11.2.3"
   }
 }
