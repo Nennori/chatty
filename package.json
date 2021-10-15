@@ -39,8 +39,11 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {    
-    "*.(js|jsx)": ["npm run lint:write", "git add"]  
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +68,8 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
     "lint-staged": "^11.2.3"
   }
 }
