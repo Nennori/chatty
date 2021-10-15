@@ -40,9 +40,8 @@
     }
   },
   "lint-staged": {
-    "*.(js|jsx)": [
-      "npm run lint:write",
-      "git add"
+    "src/**/*.(js|jsx)": [
+      "npm run lint:write"
     ]
   },
   "eslintConfig": {
