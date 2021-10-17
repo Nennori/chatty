@@ -4,18 +4,21 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['airbnb', 'jest-enzyme'],
-  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
-  parser: '@babel/eslint-parser',
+  plugins: ['import', 'jsx-a11y', 'react', 'prettier', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'jest-enzyme',
+  ],
   parserOptions: {
     ecmaVersion: 8,
     requireConfigFile: false,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-    },
-    babelOptions: {
-      presets: ['@babel/preset-react'],
     },
   },
   rules: {
@@ -56,6 +59,8 @@ module.exports = {
         },
       },
     ],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
 
     'prettier/prettier': ['error'],
   },
