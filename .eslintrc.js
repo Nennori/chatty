@@ -3,6 +3,7 @@ module.exports = {
     es6: true,
     browser: true,
     node: true,
+    jest: true,
   },
   plugins: ['import', 'jsx-a11y', 'react', 'prettier', '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
