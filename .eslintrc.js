@@ -13,6 +13,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'airbnb',
     'jest-enzyme',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaVersion: 8,
@@ -42,7 +43,7 @@ module.exports = {
 
     'react/require-default-props': 'off',
     'react/forbid-prop-types': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
 
     'prefer-destructuring': 'off',
 
@@ -62,7 +63,6 @@ module.exports = {
     ],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
-
-    'prettier/prettier': ['error'],
+    'prettier/prettier': 'error',
   },
 };
