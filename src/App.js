@@ -1,21 +1,13 @@
 import React from 'react';
-// import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Button from './atoms/Button/Button.tsx';
 import Field from './atoms/Field/Field.tsx';
 import logo from './logo.svg';
 import Header from './atoms/Header/Header.tsx';
 import './App.sass';
-// import Login from './pages/Login/Login.tsx';
-// import Chat from './pages/Chat/Chat.tsx';
 
 function App() {
   return (
     <div className="App">
-      {/* <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/chat" component={Chat} />
-        <Redirect from="/" to="/login" />
-      </Switch> */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
