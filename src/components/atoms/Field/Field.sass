@@ -1,11 +1,8 @@
 .field
   font:
-    family: 'Montserrat', sans-serif
     weight: 400
     size: 15px
-    style: normal
   line-height: 23px
-  color: #333333
   width: fit-content
   position: relative
   margin: auto
@@ -14,31 +11,31 @@
     height: 56px
     border: 1px solid #B3CDF8
     border-radius: 8px
-    color: #333333
-    //color: #9F9F9F
     padding-left: 16px
+    color: $text-color
     font:
-        family: 'Montserrat'
         weight: 400
         size: 15px
-        style: normal
-    &--typing
+    &::placeholder
+      color: #9F9F9F
+    &:focus
       border-color: #5C98F1
       outline: none
-      color: #333333
     &--error
-      border-color: #FB6262
-      color: #333333
+      border-color: $error-color
       outline: none
+      &:focus
+        border-color: $error-color
+        outline: none
   &__label
     font-weight: 600
     font-size: 13px
     line-height: 19px
     display: block
     text-align: left
-    margin-bottom: 2px 
+    margin-bottom: 2px
   &__error-message
-    color:#FB6262
+    color: $error-color
     font-weight: 500
     font-size: 13px
     line-height: 19px

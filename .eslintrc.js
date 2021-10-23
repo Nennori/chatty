@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  plugins: ['import', 'jsx-a11y', 'react', 'prettier', '@typescript-eslint'],
+  plugins: ['import', 'jsx-a11y', 'react', 'prettier', '@typescript-eslint', 'import'],
   parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
@@ -14,6 +14,7 @@ module.exports = {
     'airbnb',
     'jest-enzyme',
     'plugin:prettier/recommended',
+    'plugin:import/typescript',
   ],
   parserOptions: {
     ecmaVersion: 8,
@@ -24,7 +25,18 @@ module.exports = {
     },
   },
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'linebreak-style': 'off',
+    'import/no-unresolved': [2, { commonjs: true, amd: true }],
 
     'arrow-parens': 'off',
     'object-curly-newline': 'off',
