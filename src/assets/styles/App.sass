@@ -1,21 +1,25 @@
 @import './vars.sass'
-@import '../../components/atoms/Button/Button'
-@import '../../components/atoms/Field/Field.sass'
-@import '../../components/atoms/Header/Header.sass'
-.App 
-  text-align: center
-
-
-.App-logo 
-  height: 40vmin
-  pointer-events: none
-
+@import '../../components/atoms/Button/style.sass'
+@import '../../components/atoms/Field/style.sass'
+@import '../../components/atoms/Header/style.sass'
+@import '../../components/molecules/LoginForm/style.sass'
+@import '../../components/organisms/AuthorizationForm/style.sass'
+@import '../../components/templates/Login/style.sass'
+@import '../../components/templates/Chat/style.sass'
+@import '../../components/atoms/Message/style.sass'
+@import '../../components/molecules/UserItem/style.sass'
+@import '../../components/organisms/MainPanel/style.sass'
+@import '../../components/organisms/UserList/style.sass'
+@import '../../components/organisms/MessagePanel/style.sass'
+@import '../../components/molecules/TalkerPanel/style.sass'
+@import '../../components/molecules/WritePanel/style.sass'
 
 @media (prefers-reduced-motion: no-preference) 
   .App-logo 
     animation: App-logo-spin infinite 20s linear
   
-
+.App, #root
+  height: 100%
 
 .App-header 
   background-color: #282c34

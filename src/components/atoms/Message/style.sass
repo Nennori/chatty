@@ -1,0 +1,53 @@
+.message
+  border: 1px solid #D7E6FF
+  border-radius: 12px
+  font-weight: 400
+  font-size: 16px
+  line-height: 20px
+  color: #303030
+  position: relative
+  width: fit-content
+  padding: 12px 12px 12px 12px
+  margin: 0px
+  &--sended
+    background-color: #E9F2FF
+  &::before
+    content: ''
+    position: absolute
+    top: -1px
+    right: -15px
+    height: 0px
+    width: 0px
+    border: 12px solid
+    z-index: -1
+    border-color: #D7E6FF transparent transparent #D7E6FF
+  &::after
+    content: ''
+    position: absolute
+    top: 0px
+    right: -12px
+    height: 0px
+    width: 0px
+    border: 11px solid
+    border-color: #E9F2FF transparent transparent #E9F2FF
+  &--received
+    background-color: $base
+    &::before
+      content: ''
+      position: absolute
+      top: -1px
+      left: -15px
+      height: 0px
+      width: 0px
+      border: 12px solid
+      z-index: -1
+      border-color: #D7E6FF #D7E6FF transparent transparent 
+    &::after
+      content: ''
+      position: absolute
+      top: 0px
+      left: -12px
+      height: 0px
+      width: 0px
+      border: 11px solid
+      border-color: $base $base transparent transparent

@@ -1,0 +1,25 @@
+.login-form
+  width: 66%
+  display: flex
+  padding-left: 17%
+  padding-right: 17%
+  justify-content: flex-start
+  flex-direction: column
+  flex-wrap: nowrap 
+  height: 100%
+  @media screen and (max-width: 375px)
+    width: 94%
+    padding-left: 3%
+    padding-right: 3%  
+  .field
+    &:nth-child(1)
+      margin-bottom: 32px
+      @media screen and (max-width: 375px)
+        margin-top: 75px
+      @media screen and (max-width: 720px)
+        margin-bottom: 24px
+    &:nth-child(2)
+      margin-bottom: 48px
+      @media screen and (max-width: 720px)
+        margin-bottom: 24px
+    
