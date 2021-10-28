@@ -24,7 +24,11 @@ interface ChatProps {
 const Chat: React.FC<ChatProps> = ({ user, users }: ChatProps) => {
   return (
     <main className="chat">
-      <MainPanel />
+      <MainPanel
+        onClick={() => {
+          return undefined;
+        }}
+      />
       <div className="chat__area">
         <UserList users={users} />
         <MessagePanel user={user} />

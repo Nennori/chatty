@@ -2,13 +2,17 @@ import React from 'react';
 import Logo from '../../../assets/images/logo.svg';
 import Profile from '../../../assets/images/profile.png';
 
-const MainPanel: React.FC = () => {
+interface MainPanelProps {
+  onClick: React.MouseEventHandler<HTMLElement>;
+}
+
+const MainPanel: React.FC<MainPanelProps> = ({ onClick }: MainPanelProps) => {
   return (
     <div className="main-panel">
       <img className="main-panel__logo" src={Logo} alt="logo" />
-      <div className="main-panel__profile">
+      <button type="button" onClick={onClick} className="main-panel__profile">
         <img src={Profile} alt="profile" />
-      </div>
+      </button>
     </div>
   );
 };

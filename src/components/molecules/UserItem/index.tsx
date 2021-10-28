@@ -1,31 +1,45 @@
 import React from 'react';
 import Header from '../../atoms/Header';
 
-interface Props {
+interface UserItemProps {
   avatar: string;
   name: string;
   message: string;
   sentByOwner?: boolean;
   key: string;
   selected?: boolean;
+  ref: React.RefObject<HTMLDivElement>;
+  onClick: React.MouseEventHandler<HTMLElement>;
 }
 
-const ChatItem: React.FC<Props> = ({
+const UserItem: React.FC<UserItemProps> = ({
   avatar,
   name,
   message,
   sentByOwner = false,
   key,
   selected = false,
-}: Props) => {
+  ref,
+  onClick,
+}: UserItemProps) => {
   return (
-    <div className={`user-item ${selected ? 'user-item--selected' : ''}`} key={key}>
+    <div
+      ref={ref}
+      className={`user-item ${selected ? 'user-item--selected' : ''}`}
+      key={key}
+      role="menuitem"
+      onClick={onClick}
+      tabIndex={0}
+      onKeyDown={() => {
+        return undefined;
+      }}
+    >
       <img className="user-item__avatar" src={avatar} alt="avatar" />
       <div className="user-item__info">
         <Header header="h4">{name}</Header>
         {sentByOwner ? (
           <Header header="h6">
-            <span style={{ color: '#5E93E7' }}>You: </span>
+            <span>You: </span>
             {message}
           </Header>
         ) : (
@@ -36,4 +50,4 @@ const ChatItem: React.FC<Props> = ({
   );
 };
 
-export default ChatItem;
+export default UserItem;

@@ -8,9 +8,11 @@
   position: relative
   width: fit-content
   padding: 12px 12px 12px 12px
-  margin: 0px
   &--sended
     background-color: #E9F2FF
+    margin:
+      left: auto
+      right: 0px
   &::before
     content: ''
     position: absolute
@@ -32,6 +34,9 @@
     border-color: #E9F2FF transparent transparent #E9F2FF
   &--received
     background-color: $base
+    margin:
+      left: 0px
+      right: auto
     &::before
       content: ''
       position: absolute

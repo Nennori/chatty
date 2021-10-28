@@ -1,14 +1,16 @@
 import React from 'react';
-import Send from '../../../assets/images/send_icon.png';
-import AddFile from '../../../assets/images/add_file_icon.png';
+import Send from '../../../assets/images/send_icon.svg';
+import AddFile from '../../../assets/images/add_file_icon.svg';
 
 const WritePanel: React.FC = () => {
   return (
     <div className="write-panel">
       <form className="write-panel__form">
         <div className="write-panel__add">
-          <input type="file" name="file" />
-          <img src={AddFile} alt="add file" />
+          <label className="write-panel__input" htmlFor="file">
+            <input type="file" name="file" id="file" />
+            <img src={AddFile} alt="add file" />
+          </label>
         </div>
         <textarea
           className="write-panel__message"

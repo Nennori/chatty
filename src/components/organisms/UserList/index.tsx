@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import EmptyUserList from '../../../assets/images/empty_user_list.svg';
 import Header from '../../atoms/Header';
 import UserItem from '../../molecules/UserItem';
 
-interface Props {
+interface UserListProps {
   users: {
     id: number;
     name: string;
@@ -14,7 +14,13 @@ interface Props {
   isEmpty?: boolean;
 }
 
-const UserList: React.FC<Props> = ({ users }: Props) => {
+const UserList: React.FC<UserListProps> = ({ users }: UserListProps) => {
+  const userRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = () => {
+    userRef.current?.focus();
+  };
+
   return (
     <div className="user-list">
       {users.length === 0 ? (
@@ -25,11 +31,13 @@ const UserList: React.FC<Props> = ({ users }: Props) => {
       ) : (
         users.map(({ id, name, lastMessage, avatar, messageAuthorId }) => (
           <UserItem
+            ref={userRef}
             avatar={avatar}
             name={name}
             message={lastMessage}
             key={id.toString()}
             sentByOwner={messageAuthorId !== id}
+            onClick={handleClick}
           />
         ))
       )}
