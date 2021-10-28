@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Avatar from '../../../assets/images/icon_man.svg';
 import Chat from '../../templates/Chat';

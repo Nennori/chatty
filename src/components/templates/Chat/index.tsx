@@ -12,13 +12,15 @@ interface ChatProps {
       content: string;
     }[];
   } | null;
-  users: {
-    id: number;
-    name: string;
-    lastMessage: string;
-    avatar: string;
-    messageAuthorId: number;
-  }[];
+  users:
+    | {
+        id: number;
+        name: string;
+        lastMessage: string;
+        avatar: string;
+        messageAuthorId: number;
+      }[]
+    | null;
 }
 
 const Chat: React.FC<ChatProps> = ({ user, users }: ChatProps) => {
