@@ -2,8 +2,10 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
 import Field from '../../atoms/Field';
 import Button from '../../atoms/Button';
+import SCREENS from '../../../routes/endpoints';
 
 interface IFormInput {
   username: string;
@@ -14,7 +16,7 @@ const schema = yup
   .object({
     username: yup
       .string()
-      .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field ')
+      .matches(/^[aA-zZаА-яЯ\s]+$/u, 'Only alphabets are allowed for this field ')
       .required(),
     password: yup
       .string()
@@ -25,6 +27,7 @@ const schema = yup
   .required();
 
 const LoginForm: React.FC = () => {
+  const history = useHistory();
   const {
     control,
     handleSubmit,
@@ -35,6 +38,7 @@ const LoginForm: React.FC = () => {
   const onSubmit = (data: IFormInput) => {
     // eslint-disable-next-line no-alert
     alert(JSON.stringify(data));
+    history.push(SCREENS.SCREEN_CHAT);
   };
 
   return (

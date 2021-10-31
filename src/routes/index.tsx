@@ -11,6 +11,9 @@ const Routes: React.FC = () => {
         <Route path={SCREENS.SCREEN_LOGIN} exact>
           <LoginPage />
         </Route>
+        <Route path={SCREENS.SCREEN_MAIN} exact>
+          <LoginPage />
+        </Route>
         <Route path={SCREENS.SCREEN_CHAT} exact>
           <ChatPage />
         </Route>
